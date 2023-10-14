@@ -1,11 +1,22 @@
-export class DayWeather {
-    date: string;
-    minTemperature: number;
-    maxTemperature: number;
+/**
+ * DayWeather model stores the weather data for a single day.
+ * @author Antti Hakkarainen
+ */
+import { WeatherData } from "./weather-data.model";
 
-    constructor(date: string, minTemperature: number, maxTemperature: number) {
+export class DayWeather {
+    date: Date;
+    data: Array<WeatherData> = [];
+
+    public constructor(date: Date) {
         this.date = date;
-        this.minTemperature = minTemperature;
-        this.maxTemperature = maxTemperature;
+    }
+
+    public addData(data: WeatherData): void {
+        this.data.push(data);
+    }
+
+    public getData(): Array<WeatherData> {
+        return this.data;
     }
 }
