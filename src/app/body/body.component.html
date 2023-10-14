@@ -1,1 +1,8 @@
 <p>body works!</p>
+
+<div>
+    <app-day 
+        *ngFor="let dayWeather of weekWeather" 
+        [dayWeatherData]="dayWeather">
+    </app-day>
+</div>
